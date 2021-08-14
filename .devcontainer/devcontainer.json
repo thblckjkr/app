@@ -1,0 +1,21 @@
+{
+   "name": "Meteoreo API",
+   "service": "api",
+   "remoteUser": "root",
+   "shutdownAction": "stopCompose",
+   "workspaceFolder": "/app",
+   "dockerComposeFile": "../docker-compose.yml",
+   "extensions": [
+    "editorconfig.editorconfig",
+    "mikestead.dotenv",
+    "njpwerner.autodocstring",
+    "aaron-bond.better-comments",
+    "mhutchie.git-graph",
+    "hookyqr.beautify",
+    "magicstack.magicpython",
+    "gruntfuggly.todo-tree",
+    "ms-python.vscode-pylance",
+    "sleistner.vscode-fileutils"
+ ]
+ }
+ 

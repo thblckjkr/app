@@ -1,0 +1,33 @@
+version: '3.3'
+
+services:
+  mysql:
+    image: mysql
+    container_name: masonite-test-mysql
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    ports:
+      - "3306:3306"
+    networks:
+      - meteoreo-backend
+
+  api:
+    container_name: masonite-test
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    volumes:
+      - './:/app:delegated'
+    depends_on:
+      - mysql
+    networks:
+      - meteoreo-backend
+
+networks:
+  meteoreo-backend:
+    driver: bridge
